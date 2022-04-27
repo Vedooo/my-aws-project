@@ -1,2 +1,2 @@
 # My-AWS-Projects
-AWS &amp; DevOPS Experienced Practice Projects
+AWS &amp; DevOPS Practice Projects
