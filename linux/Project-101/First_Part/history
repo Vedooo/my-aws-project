@@ -1,0 +1,443 @@
+ 1  ls
+    2  exit
+    3  ls
+    4  sudo yum update
+    5  sudo yum install git
+    6  ls
+    7  cd Project-101/
+    8  ls
+    9  cd First_Part/
+   10  pwd
+   11  ls
+   12  cat event_history.csv 
+   13  cat event_history.csv | wc -l
+   14  cat event_history.csv | grep "serdar"
+   15  cat event_history.csv | grep "serdar" | grep -i "Terminate"
+   16  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o "i-00daa7084fb9a3184"
+   17  cat event_history.csv | grep -i "serdar" | grep -i "TerminateInstances" | cut -d, -f1,4,10
+   18  cat event_history.csv | grep -i "serdar" | grep -i "TerminateInstances" | cut -d, -f10
+   19  awk -F, '{print $1,$4,$10}' event_history.csv
+   20  cat event_history.csv | grep "serdar" | grep -i "Terminate"
+   21  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o "i-00daa7084fb9a3184"
+   22  cat event_history.csv | grep "serdar" | grep -i "Terminate"
+   23  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o [a-zA-Z0-9]{17}
+   24  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep  i-
+   25  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep  i-.................
+   26  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep  i[a-zA-Z0-9]
+   27  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o  i-[a-zA-Z0-9]
+   28  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o  i-[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]
+   29  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-[a-zA-Z0-9]{17}"
+   30  cat event_history.csv | grep "serdar" | grep -i "Terminate"
+   31  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-[a-zA-Z0-9]{17}"
+   32  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-.{17}"
+   33  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o  "i-.{17}"
+   34  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -o  "i-.\{17\}"
+   35  cat event_history.csv | grep "serdar" | grep -i "Terminate"
+   36  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-.{17}"
+   37  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-.{17}" | uniq
+   38  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-.{17}" | sort | uniq
+   39  cat event_history.csv | grep "serdar" | grep -i "Terminate" | grep -Eo  "i-.{17}" | sort | uniq > result.txt
+   40  cat result.txt 
+   41  cat result.txt | wc -l
+   42  ls
+   43  cd ..
+   44  ls
+   45  cd Second_Part/
+   46  ls
+   47  cd
+   48  pwd
+   49  ls
+   50  vi user.sh
+   51  ls
+   52  ./user.sh
+   53  chmod +x user.sh 
+   54  ls
+   55  cat user.sh 
+   56  ./user.sh 
+   57  sudo ./user.sh 
+   58  cat user.sh 
+   59  vi user.sh 
+   60  cat user.sh 
+   61  ./user.sh 
+   62  vi user.sh 
+   63  ./user.sh 
+   64  vi user.sh 
+   65  ls
+   66  ./user.sh 
+   67  sudo ./user.sh 
+   68  vi user.sh 
+   69  sudo ./user.sh 
+   70  vi user.sh 
+   71  sudo ./user.sh 
+   72  vi user.sh 
+   73  cat user.sh 
+   74  man passwd
+   75  cat user.sh 
+   76  sudo echo "123" | passwd --stdin user1 
+   77  sudo ./user.sh 
+   78  cat user.sh 
+   79  vi user.sh 
+   80  man psswd
+   81  man passwd
+   82  vi user.sh 
+   83  sudo ./user.sh 
+   84  cat user.sh 
+   85  sed "s/ec2-private_ip/abc"
+   86  ls
+   87  cd Project-101/
+   88  ls
+   89  cd Forth_Part/
+   90  ls
+   91  cd Task_
+   92  cd Task_1
+   93  ls
+   94  pwd
+   95  sed "s/ec2-private_ip/abc" terraform.tf 
+   96  sed "s/ec2-private_ip/abc/" terraform.tf 
+   97  grep -i "PrivateIpAddress" info.json 
+   98  grep -i "PrivateIpAddress" info.json | head -1
+   99  grep -i "PrivateIpAddress" info.json | head -1 | cut -d: -f2
+  100  grep -i "PrivateIpAddress" info.json | head -1 | cut -d'"' -f4
+  101  sed "s/ec2-private_ip/$(grep -i "PrivateIpAddress" info.json | head -1 | cut -d'"' -f4)/" terraform.tf 
+  102  sed -i  "s/ec2-private_ip/$(grep -i "PrivateIpAddress" info.json | head -1 | cut -d'"' -f4)/" terraform.tf 
+  103  cat terraform.tf 
+  104  ls
+  105  cd ..
+  106  ls
+  107  cd Task_2/
+  108  pwd
+  109  ls
+  110  cat certificate.pem 
+  111  ls
+  112  ca certificate.pem | echo -e
+  113  cat certificate.pem | echo -e
+  114  ls
+  115  MY_KEY=$(cat certificate.pem)
+  116  echo $MY_KEY
+  117  echo -e $MY_KEY
+  118  echo -e $MY_KEY > cert.pem
+  119  MY_KEY=$(cat certificate.pem)
+  120  cat cert.pem 
+  121  şs
+  122  ls
+  123  cat certificate.pem 
+  124  grep -i "invalid user"
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd Task_3
+  129  pwd
+  130  ls
+  131  grep i "invalid user" auth.log 
+  132  grep -i "invalid user" auth.log 
+  133  grep -i "invalid user" auth.log | head -1
+  134  grep -i "invalid user" auth.log | head -10
+  135  grep -i "invalid user" auth.log 
+  136  grep -i "invalid user" auth.log | cut -d' ' -f8
+  137  grep -i "invalid user" auth.log | cut -d' ' -f8 | head -5
+  138  grep -i "invalid user" auth.log  | head  -5
+  139  grep -i "invalid user" auth.log  | awk "'{print $10}'
+  140  grep -i "invalid user" auth.log  | awk '{print $10}'
+  141  grep -i "invalid user" auth.log  | awk '{print $8}'
+  142  grep -i "invalid user" auth.log 
+  143  grep -i "invalid user" auth.log  | awk '{print $8}'
+  144  grep -i "invalid user" auth.log  | awk '{print $9}'
+  145  grep -i "invalid user" auth.log  | cut -d' ' -f8
+  146  grep -i "invalid user" auth.log  | head -1
+  147  grep -i "invalid user" auth.log  | head -5
+  148  grep -i "invalid user" auth.log  | head -10
+  149  grep -i "invalid user" auth.log  
+  150  grep -i "invalid user" auth.log  | head -1
+  151  grep -i "invalid user" auth.log  | head -1 | cut -d' ' -f8
+  152  grep -i "invalid user" auth.log  |  cut -d' ' -f8
+  153  grep -i "invalid user" auth.log  | head -1
+  154  grep -i "invalid user" auth.log  |  cut -d' ' -f8 | uniq
+  155  grep -i "invalid user" auth.log  |  cut -d' ' -f8 | uniq -c
+  156  grep -i "invalid user" auth.log  |  cut -d' ' -f8 | uniq -c > invalid_user.log
+  157  cat invalid_user.log 
+  158  grep -i "invalid user" auth.log  |  cut -d' ' -f9 
+  159  grep -i "invalid user" auth.log  |  cut -d' ' -f9 | uniq -c
+  160  cat invalid_user.log 
+  161  grep -i "invalid user" auth.log  |  cut -d' ' -f9 | uniq -c >> invalid_user.log 
+  162  cat invalid_user.log 
+  163  cat invalid_user.log | wc -l
+  164  cat invalid_user.log | grep -v "from"
+  165  cat invalid_user.log | grep -v "from" | grep -v "for"
+  166  cat invalid_user.log | grep -v "from" | grep -v "for" | grep -v "invalid"
+  167  vi solution.sh
+  168  ls
+  169  cat invalid_user.log | wc -l
+  170  cd ..
+  171  ls
+  172  cd Third_Part/
+  173  ls
+  174  cd
+  175  ls
+  176  tar -cvzf mypro.tgz Project-101/
+  177  ls
+  178  #/home/ec2-user/data, /etc, /boot, and /usr
+  179  backup_files="/home/ec2-user/data /etc /boot /usr"
+  180  dest="/mnt/backup"
+  181  date
+  182  man date
+  183  date
+  184  date +"%Y"
+  185  date +"%Y_%m"
+  186  date +"%Y_%m_d"
+  187  date +"%Y_%m_d_%I"
+  188  date +"%Y_%m_%d_%I"
+  189  date +"%Y_%m_%d_%I_%M"
+  190  date +"%Y_%m_%d_%I_%M_%p"
+  191  time=$(date +"%Y_%m_%d_%I_%M_%p")
+  192  echo $time
+  193  archive_file="${hostname}-${time}.tgz"
+  194  echo $archive_file 
+  195  echo $hostname
+  196  echo $HOSTNAME
+  197  archive_file="$HOSTNAME}-${time}.tgz"
+  198  echo $archive_file 
+  199  archive_file="${HOSTNAME}-${time}.tgz"
+  200  echo $archive_file 
+  201  echo $HOST
+  202  echo $HOSTNAME
+  203  backup_files="/home/ec2-user/data /etc /boot /usr"
+  204  dest="/mnt/backup"
+  205  archive_file="${hostname}-${time}.tgz"
+  206  tar -cvzf mypro.tgz Project-101/
+  207  backup_files="/home/ec2-user/data /etc /boot /usr"
+  208  dest="/mnt/backup"
+  209  archive_file="${hostname}-${time}.tgz"
+  210  # tar -cvzf mypro.tgz Project-101/
+  211  backup_files="/home/ec2-user/data /etc /boot /usr"
+  212  dest="/mnt/backup"
+  213  archive_file="${hostname}-${time}.tgz"
+  214  # tar -cvzf mypro.tgz Project-101/
+  215  tar -cvzf ${dest}/${archive_file} ${backup_files}
+  216  backup_files="/home/ec2-user/data /etc /boot /usr"
+  217  archive_file="${HOSTNAME}-${time}.tgz"
+  218  dest="/mnt/backup"
+  219  tar -cvzf ${dest}/${archive_file} ${backup_files}
+  220  sudo tar -cvzf ${dest}/${archive_file} ${backup_files}
+  221  backup_files="/home/ec2-user/data /etc /boot /usr"
+  222  dest="/mnt/backup"
+  223  archive_file="${HOSTNAME}-${time}.tgz"
+  224  name=james
+  225  echo "$name"
+  226  echo "$name-007"
+  227  echo $name-007
+  228  hostname -s
+  229  ls
+  230  cd Project-101/
+  231  s
+  232  ls
+  233  cd Third_Part/
+  234  ls
+  235  chmod +x backup.sh 
+  236  ls /mnt/
+  237  sudo mkdir /mnt/backup
+  238  ls /mnt
+  239  ls
+  240  ./backup.sh 
+  241  ls /mnt/backup/
+  242  sudo ls /mnt/backup/
+  243  sl
+  244  ls
+  245  vi backup.sh 
+  246  ls
+  247  #sudo ./backup.sh 
+  248  mkdir /home/ec2-user/data
+  249  ls /mnt/
+  250  ls /mnt/backup/
+  251  sudo ./backup.sh 
+  252  vi backup.sh 
+  253  ls /mnt/backup/
+  254  sudo ./backup.sh 
+  255  ls /mnt/backup/
+  256  crontab -e
+  257  crontab -l
+  258  ls
+  259  cp backup.sh ~
+  260  ls
+  261  cd
+  262  ls
+  263  crontab -l
+  264  cd /mnt/backup/
+  265  cd -
+  266  ls /mnt/backup/
+  267  crontab -e
+  268  ls /mnt/backup/
+  269  cat backup.sh 
+  270  ls /mnt/backup/
+  271  crontab -e
+  272  ls /mnt/backup/
+  273  crontab -e
+  274  crontab -l
+  275  ls /mnt/backup/
+  276  crontab -e
+  277  ls
+  278  ls /mnt/backup/
+  279  ls
+  280  cat date.txt 
+  281  crontab -l
+  282  ls /mnt/backup/
+  283  crontab -e
+  284  ls
+  285  echo name=adem
+  286  name=adam
+  287  echo $name
+  288  name=$name-001
+  289  echo $name
+  290  ls
+  291  cat backup.sh 
+  292  ls
+  293  cd data/
+  294  s
+  295  ls
+  296  touch file{1..9}
+  297  ls
+  298  cd ..
+  299  ls
+  300  crontab -e
+  301  sudo rm /mnt/backup/*
+  302  sudo ls /mnt/backup
+  303  ls
+  304  sudo ls /mnt/backup
+  305  ls
+  306  ./backup.sh 
+  307  sudo ./backup.sh 
+  308  sudo ls /mnt/backup
+  309  ls
+  310  rm -r data/
+  311  ls
+  312  pwd
+  313  cd /
+  314  pwd
+  315  # sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz 
+  316  ls ~
+  317  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz 
+  318  ls ~
+  319  ls ~/dat
+  320  ls ~/data
+  321  cd
+  322  cd data/
+  323  ls
+  324  rm file6 file7
+  325  ls
+  326  cd /
+  327  ls
+  328  ls /home/ec2-user/data
+  329  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz 
+  330  ls /home/ec2-user/data
+  331  cd
+  332  cd data/
+  333  ls
+  334  cat file1
+  335  ls
+  336  echo "abcdef" > file1
+  337  cat file1
+  338  cd /
+  339  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz 
+  340  cd 
+  341  cd data/
+  342  ls
+  343  cat file1
+  344  ls
+  345  cd /
+  346  ls
+  347  ls tmp
+  348  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz -C /tmp /home/ec2-user/data
+  349  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz -C /tmp home/ec2-user/data
+  350  ls tmp
+  351  ls tmp/home/
+  352  ls tmp/home/ec2-user/
+  353  ls tmp/home/ec2-user/data/
+  354  sudo ls tmp/
+  355  sudo rm -rf tmp/home/
+  356  sudo ls tmp/
+  357  cd 
+  358  ls
+  359  cd data/
+  360  ls
+  361  rm file1 file2 file3
+  362  ls
+  363  cd /
+  364  ls
+  365  sudo ls tmp/
+  366  sudo tar -xzvf /mnt/backup/ip-172-31-26-160-2022_05_24_08_31_PM.tgz -C /tmp home/ec2-user/data
+  367  sudo ls tmp/
+  368  cd /
+  369  cd
+  370  ls
+  371  ls dat
+  372  ls data
+  373  exit
+  374  man grep
+  375  ls
+  376  git
+  377  sudo yum install git
+  378  ls
+  379  chmod +x user.sh 
+  380  ls
+  381  ./user.sh 
+  382  sudo ./user.sh 
+  383  ls
+  384  sudo userdel -r user9
+  385  ls /home/
+  386  man useradd
+  387  echo $?
+  388  man passwd
+  389  man passwd | grep "stdin"
+  390  man passwd | grep -A5 "stdin"
+  391  man passwd
+  392  sudo adduser user7
+  393  sudo passwd 123 user7
+  394  sudo passwd user7
+  395  sudo userdel -r user7
+  396  ls
+  397  lst
+  398  ls Project-101/
+  399  ls Project-102/
+  400  ls && lst
+  401  ls && lst > abc.txt
+  402  ls > a
+  403  lst 2>b
+  404  lst &>c
+  405  ls &>c
+  406  clear
+  407  ls
+  408  pwd
+  409  vi fruits.txt
+  410  cat fruits.txt 
+  411  cat fruits.txt | grep "e"
+  412  cat fruits.txt | grep k.k
+  413  cat fruits.txt | grep k..k
+  414  cat fruits.txt 
+  415  cat fruits.txt | grep ^b
+  416  cat fruits.txt | grep ^k
+  417  cat fruits.txt | grep n+
+  418  cat fruits.txt | grep n$
+  419  ls
+  420  cat fruits.txt 
+  421  cat fruits.txt | grep k[ae]k
+  422  cat fruits.txt | grep k[ae][bl]k
+  423  cat fruits.txt | grep k[a-z]k
+  424  cat fruits.txt | grep k[A-Z]k
+  425  cat fruits.txt | grep k[0-9]k
+  426  cat fruits.txt | grep k[a-zA-Z0-9]k
+  427  cat fruits.txt 
+  428  cat fruits.txt | grep -E "r{2}"
+  429  cat fruits.txt | grep rr
+  430  cat fruits.txt | grep [r][r]
+  431  cat fruits.txt | grep -E "r{2}"
+  432  ls
+  433  cd Project-101/
+  434  ls
+  435  cd First_Part/
+  436  ls
+  437    | sort | uniq > result.txt
+  438  cat event_history.csv | grep serdar | grep Terminate | grep -o "i-[a-zA-Z0-9]\{17\}
+  439  cat event_history.csv | grep serdar | grep Terminate | grep -o "i-[a-zA-Z0-9]\{17\}"
+  440  cat event_history.csv | grep serdar | grep Terminate | grep -o "i-.\{17\}"
+  441  cat event_history.csv | grep serdar | grep Terminate | grep -Eo "i-.{17}"
+  442  clear
+  443  history
