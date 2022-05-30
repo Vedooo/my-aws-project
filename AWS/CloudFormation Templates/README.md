@@ -1,4 +1,4 @@
-This file contains AWS CloudFormation template applications.
+<p>This file contains AWS CloudFormation template applications.
 
 The VS Code interface and the YAML extension have been worked on, and VS Code Yaml tools have been used.
 
@@ -6,12 +6,11 @@ The VS Code interface and the YAML extension have been worked on, and VS Code Ya
 
 2. Cfn-EC2-SecGroup => Create an Instance with Security Group connection
 
-3. Cfn-ASG-ELB-Template => Creating an Auto Scaling Group structure with ELB(Elastic Load Balance), ELB Listener, Target Group and Security Group. Parameters and Mapping value sets are also used for code organization.
+3. Cfn-ASG-ELB-Template => Creating an Auto Scaling Group structure with ELB(Elastic Load Balance), ELB Listener, Target Group and Security Group. Parameters and Mapping value sets are also used for code organization.</p>
 
 
 
 
-<p></p>
 
 You can access my tools here.
 
