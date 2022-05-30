@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  This is an CloudFormation Experiment.Its include Cloud Formation EC2 AWS Volumes SnapShot and AMI usage
+  
+Resources:
+  WebSecGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Its enable HTTP for Apache Server and SSH for Security Protocol
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  WebHostServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: "ami-0022f774911c1d690"
+      InstanceType: "t2.micro"
+      KeyName: "First-Key"
+      SecurityGroupIds:
+        - !Ref WebSecGroup
+      Tags:
+        - Key: Name
+          Value: Web Server for CloudFormation
+      UserData: 
+        Fn::Base64:
+          !Sub |
+            #! /bin/bash
+            yum update -y
+
+
+Outputs:
+  WebsiteURL:
+    Value: !Sub
+      - http://${PublicAdress}
+      - PublicAdress: !GetAtt WebHostServer.PublicDnsName
+    Description: This is an CloudFormation Template
