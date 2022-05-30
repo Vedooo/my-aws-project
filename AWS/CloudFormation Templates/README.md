@@ -16,7 +16,7 @@ The VS Code interface and the YAML extension have been worked on, and VS Code Ya
 
 You can access my tools here.
 
-Name: CloudFormation
+<p>Name: CloudFormation </p>
 Id: aws-scripting-guy.cform
 Description: VS Code Plugin for CloudFormation
 Version: 0.0.24
