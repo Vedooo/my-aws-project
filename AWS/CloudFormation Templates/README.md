@@ -1,4 +1,4 @@
-<p>This file contains AWS CloudFormation template applications.
+<p><h2>This file contains AWS CloudFormation template applications.</h2>
 
 The VS Code interface and the YAML extension have been worked on, and VS Code Yaml tools have been used.
 
