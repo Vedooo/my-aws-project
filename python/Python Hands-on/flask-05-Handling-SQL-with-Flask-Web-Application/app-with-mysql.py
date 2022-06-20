@@ -29,7 +29,7 @@ CREATE TABLE users (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 """
 data = """
-INSERT INTO clarusway.users 
+INSERT INTO expdb.users 
 VALUES 
 	("Tuba", "tuba@amazon.com" ),
 	("Ethan", "ethan@micrasoft.com"),
