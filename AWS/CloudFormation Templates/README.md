@@ -16,8 +16,8 @@ The VS Code interface and the YAML extension have been worked on, and VS Code Ya
 
 
 
-You can access my tools here.
-<br></br>
+<br>You can access my tools here.</br>
+
 <div>
 <li><p>Name: CloudFormation</p>
 <p>Id: aws-scripting-guy.cform</p>
