@@ -13,10 +13,7 @@ The VS Code interface and the YAML extension have been worked on, and VS Code Ya
 5. Cfn-RDS-ALB-ASG-Phonebook-App => Python(Flask)-AWS(CFN-EC2-RDS-ALB-ASG-TG) Project. This Python web structure can publishing to phonebook register application web site with CloudFormation Template.</p>
 
 
-
-
-
-<br>You can access my tools here.</br>
+You can access my tools here.
 
 <div>
 <li><p>Name: CloudFormation</p>
