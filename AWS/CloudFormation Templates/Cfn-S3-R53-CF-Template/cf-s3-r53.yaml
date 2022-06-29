@@ -1,0 +1,98 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  CloudFormation Template for kittens carousel static website deploy on s3 through cloudfront and rounte53
+Parameters:
+  
+  DomainName:
+    Description: DNS Name of existing Amazon Route 53 hosted zone ex. vkworkhub.click
+    Type: AWS::Route53::HostedZone::Id
+  ProjectDomainName:
+    Description: Full domain name for the App. ex. vedo.vkworkhub.click
+    Type: String
+    AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
+
+Resources:
+  
+  ProjectBucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccessControl: PublicRead
+      BucketName: !Ref ProjectDomainName 
+      WebsiteConfiguration: 
+        IndexDocument: index.html
+
+  ProjectBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ProjectBucket
+      PolicyDocument:     
+        Statement:
+          - Sid: PublicReadforStaticWebsite
+            Effect: Allow
+            Principal: '*'
+            Action: s3:GetObject
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref 'ProjectBucket', /*]]
+  
+  ProjectCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      CertificateTransparencyLoggingPreference: ENABLED
+      DomainName: !Ref ProjectDomainName
+      DomainValidationOptions:
+        - DomainName: !Ref ProjectDomainName
+          HostedZoneId: !Ref DomainName
+      ValidationMethod: DNS
+
+  ProjectCloudfront:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+        - !Ref ProjectDomainName
+        Comment: Cloudfront Distribution pointing to Project S3 bucket
+        DefaultCacheBehavior: 
+          AllowedMethods:
+            - GET
+            - HEAD
+          Compress: true
+          ForwardedValues:
+            QueryString: true
+            Cookies:
+              Forward: none
+          TargetOriginId: ProjectOrigin
+          ViewerProtocolPolicy: allow-all
+        DefaultRootObject: index.html
+        Enabled: true
+        HttpVersion: 'http2'
+        Origins:
+        - DomainName: !Select [2, !Split ["/", !GetAtt ProjectBucket.WebsiteURL]]
+          Id: ProjectOrigin
+          CustomOriginConfig:
+            OriginProtocolPolicy: http-only
+        PriceClass: PriceClass_All
+        ViewerCertificate:
+          AcmCertificateArn: !Ref ProjectCertificate
+          SslSupportMethod: sni-only 
+  
+  ProjectRecordSet:
+      Type: AWS::Route53::RecordSetGroup
+      Properties:
+        HostedZoneId: !Ref DomainName
+        RecordSets: 
+          - Name: !Ref ProjectDomainName
+            Type: A
+            AliasTarget:
+              DNSName: !GetAtt ProjectCloudfront.DomainName
+              HostedZoneId: Z2FDTNDATAQYW2
+
+Outputs:
+
+  BucketName: 
+    Description: S3 Bucket URL for Project Website
+    Value: !GetAtt ProjectBucket.WebsiteURL
+  CloudfrontEndpoint:
+    Description: Endpoint for Project Cloudfront
+    Value: !GetAtt ProjectCloudfront.DomainName
+  FullDomainName:
+    Description: Full Domain Name of my Application
+    Value: !Ref ProjectDomainName
