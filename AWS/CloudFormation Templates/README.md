@@ -10,7 +10,9 @@ The VS Code interface and the YAML extension have been worked on, and VS Code Ya
 
 4. Cfn-EC2-Roman_Converter => Python(Flask)-AWS(CFN-EC2) Project. This Python web structure can publishing to roman number converter calculation web site with CloudFormation Template.
 
-5. Cfn-RDS-ALB-ASG-Phonebook-App => Python(Flask)-AWS(CFN-EC2-RDS-ALB-ASG-TG) Project. This Python web structure can publishing to phonebook register application web site with CloudFormation Template.</p>
+5. Cfn-RDS-ALB-ASG-Phonebook-App => Python(Flask)-AWS(CFN-EC2-RDS-ALB-ASG-TG) Project. This Python web structure can publishing to phonebook register application web site with CloudFormation Template.
+
+6. Cfn-S3-R53-CF-Template => Creating an Static Web Site  infrastructure with S3 Bucket, CloudFront, AWS Certificate and Route53. Also using Parameters and Mapping value sets are  used for code organization.</p>
 
 
 You can access my tools here.
